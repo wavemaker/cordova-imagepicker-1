@@ -171,7 +171,7 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
     NSMutableArray *userFetchResultLabel = [[NSMutableArray alloc] init];
     for(PHCollection *collection in topLevelUserCollections)
     {
-        if ([collection isKindOfClass:[PHAssetCollection class]])
+        if ([collection isKindOfClass:[PHAssetCollection class]] && collection.localizedTitle != nil)
         {
             //PHFetchOptions *options = [[PHFetchOptions alloc] init];
             //options.predicate = predicatePHAsset;
