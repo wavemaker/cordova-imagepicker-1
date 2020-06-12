@@ -143,7 +143,7 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
     //This way I have acces to the number of items in each album, I can load the 3
     //thumbnails directly and I can pass the fetched result to the gridViewController.
     
-    NSPredicate * predicatePHAsset = allow_video? nil : [NSPredicate predicateWithFormat:@"mediaType == %d", PHAssetMediaTypeImage];
+    NSPredicate * predicatePHAsset = [NSPredicate predicateWithFormat:@"mediaType == %d", allow_video ? PHAssetMediaTypeVideo : PHAssetMediaTypeImage];
     
     PHFetchOptions *options = [[PHFetchOptions alloc] init];
     options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
